@@ -33,5 +33,6 @@ def query_similar_document(query: str, top_k: int = 3) -> list[str]:
     except Exception as e:
         logger.error(f"Error querying similar documents: {e}")
         raise ValueError(f"failed to uery similar documents: {e}")
-        
-                        
+
+
+
