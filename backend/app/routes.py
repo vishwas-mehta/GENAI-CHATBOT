@@ -46,5 +46,29 @@ def upload_documents():
     except Exception as e:
         logger.exception("Upload failed")
         return jsonify({"error": "Internal server error during file upload"}), 500
+
+
+
+@routes_bp.route("/query", methods=["POST"])
+def query_document():
+    try:
+        query = request.get_json()["query"]
+        if not query:
+            return jsonify({"error": "Query string is required"}), 400
+
+        logger.info(f"Received query: {query}")
+
+        answer= answer_query(query)
+        return jsonify({"status_code": 200, "content": {"question": query, "answer": answer}})
+
+    except Exception as e:
+        logger.exception("Query processing failed")
+        return jsonify({"error": "Internal server error during query processing"}), 500
+
+
         
+
+
+
+                
 
