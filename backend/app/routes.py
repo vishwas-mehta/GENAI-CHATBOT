@@ -71,7 +71,9 @@ def list_files():
     try:
         files = [file.name for file in UPLOAD_FOLDER.iterdir() if file.is_file()]
         return jsonify("files": files)
-    except    
+    except Exception as e:
+        logger.exception("Failed to list files")
+        return jsonify({"error": "Internal server error during file listing"}), 500   
 
 
 
