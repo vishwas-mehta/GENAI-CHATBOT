@@ -46,3 +46,32 @@ GENAI-CHATBOT/
 - **POST** `/query` - Query the indexed documents
   - Body: `{ "query": "your question here" }`
   - Returns: AI-generated answer based on document context
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/vishwas-mehta/GENAI-CHATBOT.git
+cd GENAI-CHATBOT
+```
+
+2. Install dependencies:
+```bash
+cd backend
+pip install -r requirements.txt
+```
+
+3. Set up environment variables:
+```bash
+# Create a .env file in the backend directory
+# Add your API keys and configuration
+```
+
+4. Run the application:
+```bash
+python run.py
+```
+
+## Status
+
+🚧 **Work in Progress** - This project is actively being developed. Core modules in the `core/` directory are currently being implemented.
