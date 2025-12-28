@@ -47,6 +47,12 @@ GENAI-CHATBOT/
   - Body: `{ "query": "your question here" }`
   - Returns: AI-generated answer based on document context
 
+### File Management
+- **GET** `/files` - List all uploaded files
+  - Returns: List of filenames in the upload directory
+- **DELETE** `/files/<filename>` - Delete a specific file
+  - Removes file from storage and ChromaDB index
+
 ## Installation
 
 1. Clone the repository:
@@ -74,4 +80,6 @@ python run.py
 
 ## Status
 
-🚧 **Work in Progress** - This project is actively being developed. Core modules in the `core/` directory are currently being implemented.
+✅ **Backend Routes Complete** - All API routes for document upload, query, and file management are implemented.
+
+🚧 **In Progress** - Core modules (document loaders, LLM integration, ChromaDB store) are being developed.
