@@ -31,3 +31,18 @@ GENAI-CHATBOT/
 | Document Parsing | PyPDF2, python-docx, python-pptx, PyMuPDF |
 | Embeddings | HuggingFace Hub |
 | Environment | python-dotenv |
+
+## API Endpoints
+
+### Health Check
+- **GET** `/` - Returns API status message
+
+### Document Upload
+- **POST** `/upload` - Upload documents for indexing
+  - Accepts: `multipart/form-data` with `files` field
+  - Supported formats: PDF, DOCX, PPTX, XLSX
+
+### Query
+- **POST** `/query` - Query the indexed documents
+  - Body: `{ "query": "your question here" }`
+  - Returns: AI-generated answer based on document context
