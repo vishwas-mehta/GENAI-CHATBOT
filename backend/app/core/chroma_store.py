@@ -49,5 +49,5 @@ def delete_document_by_filename(filename: str) -> bool:
     except Exception as e:
         logger.error(f"Error deleting document by filename {filename}: {e}")
         raise ValueError(f"Failed to delete document by filename {filename}: {e}")
-        
-                
+
+    
