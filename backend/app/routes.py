@@ -44,4 +44,7 @@ def upload_documents():
         process_documents(texts)
         return jsonify(content = {"message" : "Documents uploaded and indexed successfully."})
     except Exception as e:
-                    
+        logger.exception("Upload failed")
+        return jsonify({"error": "Internal server error during file upload"}), 500
+        
+
