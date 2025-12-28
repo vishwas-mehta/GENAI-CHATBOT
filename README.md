@@ -19,3 +19,15 @@ GENAI-CHATBOT/
 │   └── run.py              # Application runner
 └── .gitignore
 ```
+
+## Tech Stack
+
+| Component | Technology |
+|-----------|------------|
+| Backend Framework | Flask |
+| CORS Handling | Flask-CORS |
+| Vector Store | ChromaDB, FAISS |
+| LLM Integration | Together AI |
+| Document Parsing | PyPDF2, python-docx, python-pptx, PyMuPDF |
+| Embeddings | HuggingFace Hub |
+| Environment | python-dotenv |
