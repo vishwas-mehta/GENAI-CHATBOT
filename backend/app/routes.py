@@ -70,10 +70,36 @@ def query_document():
 def list_files():
     try:
         files = [file.name for file in UPLOAD_FOLDER.iterdir() if file.is_file()]
-        return jsonify("files": files)
+        return jsonify("files": f"{files}")
     except Exception as e:
         logger.exception("Failed to list files")
         return jsonify({"error": "Internal server error during file listing"}), 500   
+
+
+@routes_bp.route("/files/<filename>", methods=["DELETE"])
+def delete_file(filename):
+    try:
+        if not filename or not filename.strip():
+            return jsonify({"error": "Filename cannot be empty"}),400
+
+        if not allowed_file(filename):
+            return jsonify({"error": "Unsupported file type for deletion."}), 400
+
+        file_path = UPLOAD_FOLDER / filename
+        if not file_path.exists():
+            return jsonify({"error": "File not found"}), 400
+
+        logger.info(f"Deleting document with filename: {filename}")
+        is_deleted = delete_document_by_filename(filename)
+        if not is_deleted:
+            return jsonify({"error": "No document found with the specified filename"}), 400
+
+        file_path.unlink()
+        logger.info(f"File {filename} deleted successfully")
+        return jsonify({"message": f"File {filename} deleted successfully"}) 
+    except Exception as e:
+        logger.exception("Failed to delete file")
+        return jsonify({"error": "Internal server error while deleting file."}), 500
 
 
 
