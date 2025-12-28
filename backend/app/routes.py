@@ -66,7 +66,12 @@ def query_document():
         return jsonify({"error": "Internal server error during query processing"}), 500
 
 
-        
+@routes_bp.route("/files", methods=["GET"])
+def list_files():
+    try:
+        files = [file.name for file in UPLOAD_FOLDER.iterdir() if file.is_file()]
+        return jsonify("files": files)
+    except    
 
 
 
