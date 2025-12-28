@@ -35,4 +35,19 @@ def query_similar_document(query: str, top_k: int = 3) -> list[str]:
         raise ValueError(f"failed to uery similar documents: {e}")
 
 
+def delete_document_by_filename(filename: str) -> bool:
+    try:
+        results = collection.get(where = {"filename": filename})
+        ids_to_delete = results.get("ids", [])
 
+        if not ids_to_delete:
+            return False
+
+        collection.delete(ids= ids_to_delete)
+        return True
+
+    except Exception as e:
+        logger.error(f"Error deleting document by filename {filename}: {e}")
+        raise ValueError(f"Failed to delete document by filename {filename}: {e}")
+        
+                
