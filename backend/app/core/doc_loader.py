@@ -57,5 +57,21 @@ def extract_text_from_txt(file_path):
 
 def extract_text_from_file(file_path: str) -> str:
     ext = Path(file_path).suffix.lower()
-    
+    try:
+        if ext == ".pdf":
+            return extract_text_from_pdf(file_path)
+        elif ext == ".docx":
+            return extract_text_from_docx(file_path)
+        elif ext == ".pptx":
+            return extract_text_from_pptx(file_path)
+        elif ext == ".xlsx":
+            return extract_text_from_xlsx(file_path)
+        elif ext == ".txt":
+            return extract_text_from_txt(file_path)
+        else:
+            raise ValueError(f"Unsupported file type: {ext}")
+    except Exception as e:
+        logger.exception(f"Error processing file: {file_path}")
+        raise e 
+               
                    
