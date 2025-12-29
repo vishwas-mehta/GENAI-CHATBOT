@@ -20,3 +20,6 @@ def extract_text_from_pdf(file_path: str) -> str:
         text+=page.get_text()
     return text
 
+def extract_text_from_docx(file_path: str) -> str:
+    doc = docx.Document(file_path)
+    return "\n".join([para.text for para in doc.paragraphs])
