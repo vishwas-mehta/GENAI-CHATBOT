@@ -78,8 +78,23 @@ pip install -r requirements.txt
 python run.py
 ```
 
+## Features
+
+- **Multi-format Document Support**: Upload and process PDF, DOCX, PPTX, XLSX, and TXT files
+- **Intelligent Text Extraction**: Automatic text extraction from various document formats using specialized parsers
+- **Vector Store Integration**: ChromaDB-powered semantic search for efficient document retrieval
+- **LLM-Powered Q&A**: Get context-aware answers to your questions using Together AI
+- **File Management**: Full CRUD operations for managing uploaded documents
+- **RESTful API**: Clean Flask-based API endpoints for seamless integration
+
 ## Status
 
 ✅ **Backend Routes Complete** - All API routes for document upload, query, and file management are implemented.
 
-🚧 **In Progress** - Core modules (document loaders, LLM integration, ChromaDB store) are being developed.
+✅ **Document Loaders Complete** - Text extraction for PDF (PyMuPDF), DOCX (python-docx), PPTX (python-pptx), XLSX (openpyxl), and TXT files.
+
+✅ **ChromaDB Integration Complete** - Vector store for document indexing, similarity search, and document deletion by filename.
+
+✅ **Configuration Module Complete** - Environment-based configuration with support for upload folder, log directory, and vector store paths.
+
+🚧 **In Progress** - LLM query integration and embedding generation modules.
