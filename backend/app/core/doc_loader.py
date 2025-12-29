@@ -42,3 +42,18 @@ def extract_text_from_xlsx(file_path: str) -> str:
             text+=row_text+ "\n"
     return text
 
+def extract_text_from_txt(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            text= file.read()
+        return text
+
+    except FileNotFoundError as fnfe:
+        logger.error(f"File not found: {file_path}")
+        raise fnfe
+    except Exception as e:
+        logger.error(f"An error occured: {e}")
+        raise e 
+
+        
+                   
