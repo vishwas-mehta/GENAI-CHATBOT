@@ -23,3 +23,13 @@ def extract_text_from_pdf(file_path: str) -> str:
 def extract_text_from_docx(file_path: str) -> str:
     doc = docx.Document(file_path)
     return "\n".join([para.text for para in doc.paragraphs])
+
+def extract_text_from_pptx(file_path: str) -> str:
+    prs = Presentation(file_path)
+    text = ""
+    for slide in prs.slides:
+        for shape in slide.shapes:
+            if hasattr(shape, "text"):
+                text+= shape.text +"\n"
+        return text
+                
