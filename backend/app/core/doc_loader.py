@@ -73,5 +73,23 @@ def extract_text_from_file(file_path: str) -> str:
     except Exception as e:
         logger.exception(f"Error processing file: {file_path}")
         raise e 
-               
-                   
+
+
+def extract_texts_from_filepaths(files_path: str) -> list:
+    try:
+        all_texts = {}
+        for file_path in file_path:
+            if not Path(file_path).is_file():
+                logger.warning(f"Skipping non-file path: {file_path}")
+                continue
+            ext = Path(file_path).suffix.lower().lstrip(".")
+            if ext not in SUPPORTED_EXTENSIONS:
+                logger.warning(f"Unsupported file type: {ext} for file {file_path}")
+                continue
+            text = extract_text_from_file(file_path)
+            all_texts[Path(file_path).name] = text
+            return all_texts
+    except Exception as e:
+        logger.exception("Error processing file paths")
+        raise e
+                       
