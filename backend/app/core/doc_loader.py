@@ -55,5 +55,7 @@ def extract_text_from_txt(file_path):
         logger.error(f"An error occured: {e}")
         raise e 
 
-        
+def extract_text_from_file(file_path: str) -> str:
+    ext = Path(file_path).suffix.lower()
+    
                    
