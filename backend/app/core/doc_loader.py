@@ -32,4 +32,13 @@ def extract_text_from_pptx(file_path: str) -> str:
             if hasattr(shape, "text"):
                 text+= shape.text +"\n"
         return text
-                
+
+def extract_text_from_xlsx(file_path: str) -> str:
+    wb=openpyxl.load_workbook(file_path, data_only=True)
+    text=""
+    for sheet in wb.worksheets:
+        for row in sheet.iter_rows():
+            row_text = " ".join([str(cell.value) if cell.value else ""])
+            text+=row_text+ "\n"
+    return text
+
