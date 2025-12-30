@@ -1,38 +1,57 @@
-# GENAI-CHATBOT
+# 🤖 GENAI-CHATBOT
 
-A Document-based AI Chatbot powered by GenAI for intelligent document search and question answering.
+[![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector_Store-FF6B6B?style=for-the-badge)](https://www.trychroma.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## Overview
+> 🔍 A Document-based AI Chatbot powered by GenAI for intelligent document search and question answering.
 
-This project is an intelligent document search bot that allows users to upload documents and query them using natural language. The backend is built with Flask and integrates with AI/LLM services for generating context-aware responses.
+## 📋 Overview
 
-## Project Structure
+This project is an **intelligent document search bot** that allows users to upload documents and query them using natural language. The backend is built with Flask and integrates with AI/LLM services for generating context-aware responses.
+
+### ✨ Key Features
+
+- **📄 Multi-format Document Support**: Upload and process PDF, DOCX, PPTX, XLSX, and TXT files
+- **🔎 Intelligent Text Extraction**: Automatic text extraction using specialized parsers
+- **🗄️ Vector Store Integration**: ChromaDB-powered semantic search for efficient document retrieval
+- **🤖 LLM-Powered Q&A**: Get context-aware answers using Together AI
+- **📁 File Management**: Full CRUD operations for managing uploaded documents
+- **🌐 RESTful API**: Clean Flask-based API endpoints for seamless integration
+
+## 🏗️ Project Structure
 
 ```
 GENAI-CHATBOT/
 ├── backend/
 │   ├── app/
-│   │   ├── core/           # Core modules (config, logger, document loaders, LLM query)
-│   │   ├── main.py         # Flask application entry point
-│   │   └── routes.py       # API route definitions
-│   ├── requirements.txt    # Python dependencies
-│   └── run.py              # Application runner
-└── .gitignore
+│   │   ├── core/              # Core modules
+│   │   │   ├── config.py      # Environment configuration
+│   │   │   ├── doc_loader.py  # Document text extraction
+│   │   │   ├── chroma_store.py # ChromaDB vector store
+│   │   │   └── embedding.py   # Embedding generation
+│   │   ├── main.py            # Flask application entry point
+│   │   └── routes.py          # API route definitions
+│   ├── requirements.txt       # Python dependencies
+│   └── run.py                 # Application runner
+├── .gitignore
+└── README.md
 ```
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Component | Technology |
 |-----------|------------|
-| Backend Framework | Flask |
-| CORS Handling | Flask-CORS |
-| Vector Store | ChromaDB, FAISS |
-| LLM Integration | Together AI |
-| Document Parsing | PyPDF2, python-docx, python-pptx, PyMuPDF |
-| Embeddings | HuggingFace Hub |
-| Environment | python-dotenv |
+| **Backend Framework** | Flask |
+| **CORS Handling** | Flask-CORS |
+| **Vector Store** | ChromaDB, FAISS |
+| **LLM Integration** | Together AI |
+| **Document Parsing** | PyPDF2, python-docx, python-pptx, PyMuPDF |
+| **Embeddings** | HuggingFace Hub |
+| **Environment** | python-dotenv |
 
-## API Endpoints
+## 🔌 API Endpoints
 
 ### Health Check
 - **GET** `/` - Returns API status message
@@ -40,7 +59,7 @@ GENAI-CHATBOT/
 ### Document Upload
 - **POST** `/upload` - Upload documents for indexing
   - Accepts: `multipart/form-data` with `files` field
-  - Supported formats: PDF, DOCX, PPTX, XLSX
+  - Supported formats: PDF, DOCX, PPTX, XLSX, TXT
 
 ### Query
 - **POST** `/query` - Query the indexed documents
@@ -53,48 +72,63 @@ GENAI-CHATBOT/
 - **DELETE** `/files/<filename>` - Delete a specific file
   - Removes file from storage and ChromaDB index
 
-## Installation
+## 🚀 Installation
 
-1. Clone the repository:
+### Prerequisites
+- Python 3.9+
+- pip
+
+### Setup
+
+1. **Clone the repository:**
 ```bash
 git clone https://github.com/vishwas-mehta/GENAI-CHATBOT.git
 cd GENAI-CHATBOT
 ```
 
-2. Install dependencies:
+2. **Install dependencies:**
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
-3. Set up environment variables:
+3. **Set up environment variables:**
 ```bash
 # Create a .env file in the backend directory
+cp .env.example .env
 # Add your API keys and configuration
 ```
 
-4. Run the application:
+4. **Run the application:**
 ```bash
 python run.py
 ```
 
-## Features
+The server will start at `http://localhost:5000`
 
-- **Multi-format Document Support**: Upload and process PDF, DOCX, PPTX, XLSX, and TXT files
-- **Intelligent Text Extraction**: Automatic text extraction from various document formats using specialized parsers
-- **Vector Store Integration**: ChromaDB-powered semantic search for efficient document retrieval
-- **LLM-Powered Q&A**: Get context-aware answers to your questions using Together AI
-- **File Management**: Full CRUD operations for managing uploaded documents
-- **RESTful API**: Clean Flask-based API endpoints for seamless integration
+## 📊 Development Status
 
-## Status
+| Module | Status |
+|--------|--------|
+| Backend Routes | ✅ Complete |
+| Document Loaders | ✅ Complete |
+| ChromaDB Integration | ✅ Complete |
+| Configuration Module | ✅ Complete |
+| Embedding Generation | 🚧 In Progress |
+| LLM Query Integration | 🚧 In Progress |
 
-✅ **Backend Routes Complete** - All API routes for document upload, query, and file management are implemented.
+### Completed Features
 
-✅ **Document Loaders Complete** - Text extraction for PDF (PyMuPDF), DOCX (python-docx), PPTX (python-pptx), XLSX (openpyxl), and TXT files.
+- ✅ **Backend Routes** - All API routes for document upload, query, and file management
+- ✅ **Document Loaders** - Text extraction for PDF, DOCX, PPTX, XLSX, and TXT files
+- ✅ **ChromaDB Integration** - Vector store for document indexing and similarity search
+- ✅ **Configuration Module** - Environment-based configuration with dotenv support
 
-✅ **ChromaDB Integration Complete** - Vector store for document indexing, similarity search, and document deletion by filename.
+### In Progress
 
-✅ **Configuration Module Complete** - Environment-based configuration with support for upload folder, log directory, and vector store paths.
+- 🚧 **Embedding Module** - HuggingFace embeddings for semantic search
+- 🚧 **LLM Query Module** - Together AI integration for question answering
 
-🚧 **In Progress** - LLM query integration and embedding generation modules.
+---
+
+**Made with ❤️ by [Vishwas Mehta](https://github.com/vishwas-mehta)**
