@@ -129,6 +129,39 @@ The server will start at `http://localhost:5000`
 - 🚧 **Embedding Module** - HuggingFace embeddings for semantic search
 - 🚧 **LLM Query Module** - Together AI integration for question answering
 
+## 🗺️ Roadmap
+
+- [ ] Complete embedding generation module
+- [ ] Implement LLM query integration with Together AI
+- [ ] Add frontend UI with React/Next.js
+- [ ] Implement user authentication
+- [ ] Add support for more document formats
+- [ ] Add conversation history and context management
+- [ ] Deploy to cloud platform (AWS/GCP)
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** your changes (`git commit -m 'Add amazing feature'`)
+4. **Push** to the branch (`git push origin feature/amazing-feature`)
+5. **Open** a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgements
+
+- [Flask](https://flask.palletsprojects.com/) - Web framework
+- [ChromaDB](https://www.trychroma.com/) - Vector database
+- [Together AI](https://www.together.ai/) - LLM services
+- [HuggingFace](https://huggingface.co/) - Embeddings and models
+
 ---
 
-**Made with ❤️ by [Vishwas Mehta](https://github.com/vishwas-mehta)**
+<p align="center">
+  <b>Made with ❤️ by <a href="https://github.com/vishwas-mehta">Vishwas Mehta</a></b>
+</p>
