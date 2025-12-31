@@ -114,8 +114,8 @@ The server will start at `http://localhost:5000`
 | Document Loaders | ✅ Complete |
 | ChromaDB Integration | ✅ Complete |
 | Configuration Module | ✅ Complete |
-| Embedding Generation | 🚧 In Progress |
-| LLM Query Integration | 🚧 In Progress |
+| Embedding Generation | ✅ Complete |
+| LLM Query Integration | ✅ Complete |
 
 ### Completed Features
 
@@ -123,11 +123,8 @@ The server will start at `http://localhost:5000`
 - ✅ **Document Loaders** - Text extraction for PDF, DOCX, PPTX, XLSX, and TXT files
 - ✅ **ChromaDB Integration** - Vector store for document indexing and similarity search
 - ✅ **Configuration Module** - Environment-based configuration with dotenv support
-
-### In Progress
-
-- 🚧 **Embedding Module** - HuggingFace embeddings for semantic search
-- 🚧 **LLM Query Module** - Together AI integration for question answering
+- ✅ **Embedding Module** - HuggingFace Inference API for generating semantic embeddings
+- ✅ **LLM Query Module** - Together AI and HuggingFace integration for Q&A
 
 ## 🗺️ Roadmap
 
