@@ -24,4 +24,5 @@ def get_embedding(text: str) -> List[float]:
     except Exception as e:
         logger.exception("Error getting embedding")
         raise ValueError("Failed to get embedding from model.")
-         
+
+        
