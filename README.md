@@ -26,13 +26,15 @@ This project is an **intelligent document search bot** that allows users to uplo
 GENAI-CHATBOT/
 ├── backend/
 │   ├── app/
-│   │   ├── core/              # Core modules
+│   │   ├── core/              # Core AI/ML modules
 │   │   │   ├── config.py      # Environment configuration
 │   │   │   ├── doc_loader.py  # Document text extraction
 │   │   │   ├── chroma_store.py # ChromaDB vector store
-│   │   │   └── embedding.py   # Embedding generation
+│   │   │   ├── embedding.py   # HuggingFace embedding generation
+│   │   │   └── llm_query.py   # LLM query and response generation
 │   │   ├── main.py            # Flask application entry point
 │   │   └── routes.py          # API route definitions
+│   ├── uploads/               # Uploaded documents storage
 │   ├── requirements.txt       # Python dependencies
 │   └── run.py                 # Application runner
 ├── .gitignore
