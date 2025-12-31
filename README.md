@@ -128,13 +128,15 @@ The server will start at `http://localhost:5000`
 
 ## 🗺️ Roadmap
 
-- [ ] Complete embedding generation module
-- [ ] Implement LLM query integration with Together AI
+- [x] Complete embedding generation module
+- [x] Implement LLM query integration with Together AI
 - [ ] Add frontend UI with React/Next.js
 - [ ] Implement user authentication
-- [ ] Add support for more document formats
+- [ ] Add support for more document formats (Markdown, HTML, CSV)
 - [ ] Add conversation history and context management
-- [ ] Deploy to cloud platform (AWS/GCP)
+- [ ] Implement document chunking for better context retrieval
+- [ ] Add rate limiting and API key management
+- [ ] Deploy to cloud platform (AWS/GCP/Heroku)
 
 ## 🤝 Contributing
 
