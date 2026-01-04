@@ -20,3 +20,10 @@ headers = {
 }
 
 client = chromadb.Client(Settings(persist_directory= "./chroma_store"))
+
+collection = client.get_or_create_collection("documents")
+
+def build_client() -> InferenceClient:
+    return InferenceClient(token=HUGGINGFACE_API_TOKEN,
+    model = LLM_MODEL,
+    timeout=300)
