@@ -83,6 +83,31 @@ GENAI-CHATBOT/
 - **DELETE** `/files/<filename>` - Delete a specific file
   - Removes file from storage and ChromaDB index
 
+### 📝 Usage Examples
+
+**Upload a document:**
+```bash
+curl -X POST http://localhost:5000/upload \
+  -F "files=@/path/to/document.pdf"
+```
+
+**Query your documents:**
+```bash
+curl -X POST http://localhost:5000/query \
+  -H "Content-Type: application/json" \
+  -d '{"query": "What is the main topic of the document?"}'
+```
+
+**List all uploaded files:**
+```bash
+curl http://localhost:5000/files
+```
+
+**Delete a file:**
+```bash
+curl -X DELETE http://localhost:5000/files/document.pdf
+```
+
 ## 🚀 Installation
 
 ### Prerequisites
