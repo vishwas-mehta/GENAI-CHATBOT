@@ -13,3 +13,10 @@ from huggingface_hub import InferenceClient
 
 HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 LLM_MODEL = os.getenv("LLM_MODEL")
+
+headers = {
+    "Authorization": f"Bearer {os.getenv("HUGGINGFACEHUB_API_TOKEN")}",
+    "Content-Type": "application/json"
+}
+
+client = chromadb.Client(Settings(persist_directory= "./chroma_store"))
