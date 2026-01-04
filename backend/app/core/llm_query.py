@@ -36,3 +36,9 @@ def extract_qa(response_text):
         question = question.match.group(1).strip() if 
         question_match else ""
         answer = answer_match.group(1).strip() if answer_match else ""
+
+        return question, answer
+    except Exception as e:
+        logging.error(f"Error extracting QA: {str(e)}")
+        return ValueError("Failed to extract question and answer from the response.")
+        
