@@ -10,3 +10,6 @@ from chromadb.config import Settings
 from app.core.chroma_store import query_similar_documents, add_documents_to_vector_store
 
 from huggingface_hub import InferenceClient
+
+HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
+LLM_MODEL = os.getenv("LLM_MODEL")
