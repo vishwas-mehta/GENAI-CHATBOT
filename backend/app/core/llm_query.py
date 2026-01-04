@@ -27,3 +27,12 @@ def build_client() -> InferenceClient:
     return InferenceClient(token=HUGGINGFACE_API_TOKEN,
     model = LLM_MODEL,
     timeout=300)
+
+def extract_qa(response_text):
+    try:
+        question_match = re.search(r"(?i)question:\s*(.+)", response_text)
+        answer_match = re.search(r"(?i)answer:\s*()", response_text)
+
+        question = question.match.group(1).strip() if 
+        question_match else ""
+        answer = answer_match.group(1).strip() if answer_match else ""
