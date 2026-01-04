@@ -9,16 +9,25 @@
 
 ## 📋 Overview
 
-This project is an **intelligent document search bot** that allows users to upload documents and query them using natural language. The backend is built with Flask and integrates with AI/LLM services for generating context-aware responses.
+This project is an **intelligent document search bot** powered by **Retrieval-Augmented Generation (RAG)**. Users can upload documents, and the system will index them using vector embeddings. When a user asks a question, the bot retrieves the most relevant document chunks using semantic similarity search (ChromaDB) and uses an LLM (via HuggingFace Inference API) to generate accurate, context-aware answers.
+
+### 🧠 How It Works
+
+1. **Document Upload** → Files are parsed and text is extracted
+2. **Embedding Generation** → Text is converted to vector embeddings using HuggingFace models
+3. **Vector Storage** → Embeddings are stored in ChromaDB for efficient similarity search
+4. **Query Processing** → User queries are matched against stored embeddings
+5. **Answer Generation** → Relevant context is passed to an LLM for accurate responses
 
 ### ✨ Key Features
 
 - **📄 Multi-format Document Support**: Upload and process PDF, DOCX, PPTX, XLSX, and TXT files
 - **🔎 Intelligent Text Extraction**: Automatic text extraction using specialized parsers
 - **🗄️ Vector Store Integration**: ChromaDB-powered semantic search for efficient document retrieval
-- **🤖 LLM-Powered Q&A**: Get context-aware answers using Together AI
+- **🤖 LLM-Powered Q&A**: Get context-aware answers using HuggingFace Inference API
 - **📁 File Management**: Full CRUD operations for managing uploaded documents
 - **🌐 RESTful API**: Clean Flask-based API endpoints for seamless integration
+- **⚡ Fast Retrieval**: Semantic search with cosine similarity for quick relevant document matching
 
 ## 🏗️ Project Structure
 
