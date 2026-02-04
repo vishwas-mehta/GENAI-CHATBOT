@@ -189,7 +189,6 @@ Contributions are welcome! Here's how you can help:
 
 - [Flask](https://flask.palletsprojects.com/) - Web framework
 - [ChromaDB](https://www.trychroma.com/) - Vector database
-- [Together AI](https://www.together.ai/) - LLM services
 - [HuggingFace](https://huggingface.co/) - Embeddings and models
 
 ---
